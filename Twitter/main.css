@@ -1,0 +1,22 @@
+.gris{
+	background-color: lightgrey;
+}
+
+.fit{
+	width: 100%;
+}
+
+.mt-1{
+	margin-top: 1%;
+}
+
+li{
+	background-color: lightgrey;
+	margin-top: 1%;
+	padding-right: 3%;
+	padding-top: 1%;
+	padding-left: 1%;
+}
+h5{
+	font-weight: bolder;
+}

@@ -1,0 +1,21 @@
+.rosa{
+	background-color: pink;
+	padding-bottom: 3%;
+	padding-left: 3%;
+	padding-right: 3%;
+}
+
+.inicio{
+	margin-top: 2%;
+	color: white;
+	font-size: 1.5em;
+	background-color: grey;
+}
+
+.boton1{
+	margin-left: 1%;
+}
+
+input{
+	margin-left: 1%;
+}
