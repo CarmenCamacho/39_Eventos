@@ -9,10 +9,11 @@ div1.appendChild(addButton);
 var botonx = document.createElement("button");
 botonx.setAttribute("class", "btn btn-default inline");
 botonx.innerHTML = "X";
-
-
 			
 function agrega(){
+	var botonx = document.createElement("button");
+	botonx.setAttribute("class", "btn btn-default inline");
+	botonx.innerHTML = "X";
 	var creaNombre = document.createElement("input");
 	creaNombre.setAttribute("placeholder", "Añadir una lista...");
 	creaNombre.setAttribute("class", "inline");
@@ -49,10 +50,12 @@ function guarda(){
 		div1.insertBefore(tarjeta, div1.childNodes[final]);
 		document.getElementById("titulo").value = ""; //Borra el cont. previo del input de titulo
 	}	
-
 } 
 
 function contenidoTarjeta(esta){
+	var botonx = document.createElement("button");
+	botonx.setAttribute("class", "btn btn-default inline");
+	botonx.innerHTML = "X";
 	var papa = esta.parentNode;
 	var guardaTarjeta = document.createElement("button");
 		guardaTarjeta.innerHTML = "Guardar";
@@ -68,7 +71,7 @@ function contenidoTarjeta(esta){
 												papa.removeChild(fillmeup);})
 	
 	papa.insertBefore(fillmeup, papa.childNodes[ultimoChild]);
-	fillmeup.focus();
+	fillmeup.focus(); //Darle el foco al textarea
 	guardaTarjeta.addEventListener("click",function(){if(fillmeup.value != "" ){
 		parrafo.innerHTML = fillmeup.value;
 		papa.replaceChild(parrafo, fillmeup);
