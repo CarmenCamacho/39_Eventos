@@ -4,9 +4,11 @@ var elementoLista = document.getElementById('agrega');
 function activa(){ //detonada por onchange dentro del area de texto.
 	var boton= document.getElementById('boton');
 	if (elementoLista.value != "" || elementoLista.value != null) {
-		boton.removeAttribute("disabled")	
+		boton.removeAttribute("disabled");
+	} else {
+		boton.setAttribute("disabled", "disabled");
 	}
-	}
+}
 
 function agregaLista(){ //agrega un elemento a la lista de tareas
 	if (elementoLista.value.length>0) {
@@ -14,9 +16,6 @@ function agregaLista(){ //agrega un elemento a la lista de tareas
 		var nuevoCheck= document.createElement('input');
 		nuevoCheck.setAttribute('type', 'checkbox')
 		nuevoCheck.setAttribute('onClick', 'tachar(this)')
-		/*nuevoCheck.onClick = function(checado){
-		checado.target.parentNode.classList.toggle("checked")
-		}*/
 		nuevoItem.appendChild(nuevoCheck)
 		nuevoItem.innerHTML += '  ' + elementoLista.value + '    <span class="glyphicon glyphicon-trash pull-right" onclick="borrar(this)"></span>'
 		var lista = document.getElementById('lista');
@@ -40,6 +39,12 @@ function tachar(esto){
 	papa.style.textDecoration = "none"
 	}
 }
+
+
+
+/*nuevoCheck.onClick = function(checado){
+		checado.target.parentNode.classList.toggle("checked")
+		} AVERIGUAR QUE ONDAAAAAA CON EL TOGGLE y EL TARGET*/
 
 
 /*else {}

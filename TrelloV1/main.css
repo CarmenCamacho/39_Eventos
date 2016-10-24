@@ -1,21 +1,26 @@
 .rosa{
 	background-color: pink;
-	padding-bottom: 3%;
-	padding-left: 3%;
-	padding-right: 3%;
+
 }
 
-.inicio{
-	margin-top: 2%;
-	color: white;
-	font-size: 1.5em;
+
+.tarjeta{
+	background-color: white;
+	margin-right: 2%;
+
+}
+
+h3{
 	background-color: grey;
+	margin: 0px;
 }
 
-.boton1{
-	margin-left: 1%;
+.inline{
+	display: inline-block;
+
 }
 
-input{
-	margin-left: 1%;
+.boton2{
+	display: block;
 }
+
