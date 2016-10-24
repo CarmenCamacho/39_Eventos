@@ -3,11 +3,9 @@
 
 }
 
-
 .tarjeta{
 	background-color: white;
 	margin-right: 2%;
-
 }
 
 h3{
@@ -20,7 +18,7 @@ h3{
 
 }
 
-.boton2{
+.block{
 	display: block;
 }
 

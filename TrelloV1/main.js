@@ -6,6 +6,9 @@ addButton.setAttribute("onclick", "agrega()");
 addButton.innerHTML = "Añadir una lista..."
 var div1 = document.getElementById("div1")
 div1.appendChild(addButton);
+var botonx = document.createElement("button");
+botonx.setAttribute("class", "btn btn-default inline");
+botonx.innerHTML = "X";
 
 
 			
@@ -18,12 +21,9 @@ function agrega(){
 	var papa = document.getElementById("div1");
 	papa.replaceChild(creaNombre, quitaBoton); //Reemplazo el boton con el input para añadir lista
 	var boton1 = document.createElement("button");
-	var botonx = document.createElement("button");
-	botonx.setAttribute("class", "btn btn-default inline");
-	botonx.innerHTML = "X";
-	botonx.addEventListener("click", function(){papa.replaceChild(quitaBoton, creaNombre); 
-												document.getElementById("div1").removeChild(botonx);
-												document.getElementById("div1").removeChild(boton1);})
+	botonx.addEventListener("click", function(){papa.replaceChild(quitaBoton, creaNombre); //POR AQUI ANDA UN ERROR
+												papa.removeChild(boton1);
+												papa.removeChild(botonx);}) 
 	boton1.setAttribute("class", "btn btn-primary boton1 inline");
 	boton1.setAttribute("onclick", "guarda()");
 	boton1.innerHTML = "guardar"
@@ -37,7 +37,8 @@ function guarda(){
 		var titulo = document.createElement("h3");
 		titulo.innerHTML = document.getElementById('titulo').value;
 		var boton2 = document.createElement("button");
-		boton2.setAttribute("class", "boton2 btn btn-primary")
+		boton2.setAttribute("class", "block btn btn-primary")
+		boton2.setAttribute("id", "boton2")
 		boton2.setAttribute("onclick", "contenidoTarjeta(this)")
 		boton2.innerHTML = "Añadir tarjeta";
 		var tarjeta = document.createElement("div");
@@ -52,28 +53,28 @@ function guarda(){
 } 
 
 function contenidoTarjeta(esta){
+	var papa = esta.parentNode;
+	var guardaTarjeta = document.createElement("button");
+		guardaTarjeta.innerHTML = "Guardar";
+		guardaTarjeta.setAttribute("class", "btn btn-primary inline");
 	var fillmeup = document.createElement("textarea");
+		fillmeup.setAttribute("class","block");
 	var parrafo = document.createElement("p");
-	var papa = esta.parentNode
 	var ultimoChild = papa.childNodes.length - 1;
+	papa.replaceChild(guardaTarjeta, esta);
+	papa.appendChild(botonx);
+	botonx.addEventListener("click", function(){papa.replaceChild(esta, guardaTarjeta); //POR AQUI ANDA UN ERROR
+												papa.removeChild(botonx);
+												papa.removeChild(fillmeup);})
+	
 	papa.insertBefore(fillmeup, papa.childNodes[ultimoChild]);
-	fillmeup.addEventListener("blur", function(){if(fillmeup.value != "" ){
+	guardaTarjeta.addEventListener("click",function(){if(fillmeup.value != "" ){
 		parrafo.innerHTML = fillmeup.value;
 		papa.replaceChild(parrafo, fillmeup);
-	} 
-	else if (fillmeup.value == "" ) {papa.removeChild(fillmeup);}})	
-	return;
+		papa.replaceChild(esta, guardaTarjeta)
+		papa.removeChild(botonx)
+		}
+	})
+
 }
-
-
-
-
-/*
-	if(titulo.value= "" || titulo.value= null ){
-		document.getElementById("addbutton").disabled = true;
-	}
-	else{
-		document.getElementById("addbutton").disabled = false;
-	}
-*/
 
