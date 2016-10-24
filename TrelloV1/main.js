@@ -68,6 +68,7 @@ function contenidoTarjeta(esta){
 												papa.removeChild(fillmeup);})
 	
 	papa.insertBefore(fillmeup, papa.childNodes[ultimoChild]);
+	fillmeup.focus();
 	guardaTarjeta.addEventListener("click",function(){if(fillmeup.value != "" ){
 		parrafo.innerHTML = fillmeup.value;
 		papa.replaceChild(parrafo, fillmeup);
