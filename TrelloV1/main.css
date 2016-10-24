@@ -1,16 +1,24 @@
 .rosa{
 	background-color: pink;
+	padding: 2%;
 
 }
 
 .tarjeta{
-	background-color: white;
+	background-color: lightblue;
 	margin-right: 2%;
+	padding: 0.5%;
+	box-sizing: content-box;
+	max-width: 200px;
+
 }
 
 h3{
-	background-color: grey;
+	background-color: lightblue;
 	margin: 0px;
+	padding: 2%;
+	width: 200px;
+	font-size: 1.3em;
 }
 
 .inline{
@@ -22,3 +30,19 @@ h3{
 	display: block;
 }
 
+.tarjeta{
+	border-radius: 4px;
+}
+
+p{
+	border-radius: 4px;
+	margin-top: .7em;
+	margin-left: .5em;
+	margin-right: .5em;
+	padding: 2%;
+	background-color: white;
+}
+
+textarea{
+	width: 200px;
+}

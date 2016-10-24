@@ -6,6 +6,7 @@ addButton.setAttribute("onclick", "agrega()");
 addButton.innerHTML = "Añadir una lista..."
 var div1 = document.getElementById("div1")
 div1.appendChild(addButton);
+addButton.focus();
 var botonx = document.createElement("button");
 botonx.setAttribute("class", "btn btn-default inline");
 botonx.innerHTML = "X";
@@ -77,6 +78,7 @@ function contenidoTarjeta(esta){
 		papa.replaceChild(parrafo, fillmeup);
 		papa.replaceChild(esta, guardaTarjeta)
 		papa.removeChild(botonx)
+
 		}
 	})
 
